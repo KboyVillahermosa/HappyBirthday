@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    padding: 20px;
+}
+.header-content{
+    width: 100%;
+    max-width: 900px;
+}
+.header-image-top{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.header-image img{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+
+}
+
+/* Header.css */
+.mute-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #7e3af2;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    z-index: 999;
+  }
+  
+  .mute-button:hover {
+    transform: scale(1.1);
+    background-color: #5b28c0;
+  }
+  

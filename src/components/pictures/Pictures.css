@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.pic-title{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 50px;
+}
+.pic-header{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.pic-content img{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    height: 100%;
+}
