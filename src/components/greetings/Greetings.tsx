@@ -8,6 +8,10 @@ const Greetings: React.FC = () => {
   const [likeCard2, setLikeCard2] = useState(false);
   const [likeCard3, setLikeCard3] = useState(false);
   const [likeCard4, setLikeCard4] = useState(false);
+  const [likeCard5, setLikeCard5] = useState(false);
+
+
+  const [showAll, setShowAll] = useState(false);
 
   // Function to toggle like state for each card
   const handleLikeToggle = (cardNumber: number) => {
@@ -24,6 +28,9 @@ const Greetings: React.FC = () => {
       case 4:
         setLikeCard4(prev => !prev);
         break;
+      case 5:
+        setLikeCard5(prev => !prev);
+        break;
       default:
         break;
     }
@@ -32,6 +39,7 @@ const Greetings: React.FC = () => {
   return (
     <>
       <div className="greatings-header flex flex-wrap gap-4 justify-center">
+        {/* Displaying the first 4 cards */}
         <div className="greatings-content">
           <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -119,6 +127,41 @@ const Greetings: React.FC = () => {
             </div>
           </Card>
         </div>
+
+        {/* Conditionally rendering the 5th card based on the showAll state */}
+        {showAll && (
+          <div className="greatings-content">
+            <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                John Doe
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                May this year bring you countless blessings and endless joy!
+              </p>
+              <div className="flex items-center justify-between mt-4">
+                <button
+                  onClick={() => handleLikeToggle(5)}
+                  className={`text-2xl flex items-center space-x-2 transition-colors ${
+                    likeCard5 ? 'text-pink-600' : 'text-gray-500'
+                  } hover:text-pink-800`}
+                >
+                  ❤️
+                  <span className="text-sm font-medium">{likeCard5 ? 1 : 0}</span>
+                </button>
+              </div>
+            </Card>
+          </div>
+        )}
+      </div>
+
+      {/* Toggle button for "See More" and "See Less" */}
+      <div className="text-center mt-4 p-3">
+        <button
+          onClick={() => setShowAll(prev => !prev)}
+          className="text-white p-3 rounded-full bg-purple-600"
+        >
+          {showAll ? 'See Less' : 'See More'}
+        </button>
       </div>
     </>
   );
