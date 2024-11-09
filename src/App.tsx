@@ -3,6 +3,7 @@ import Header from './components/header/Header';
 import { Component as Navbar } from './components/navbar/Navbar';
 import Gallery from './components/gallery/Gallery';
 import Pictures from './components/pictures/Pictures';
+import Greetings from './components/greetings/Greetings';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Gallery />
         <Pictures />
+        <Greetings />
         </>} />
     </Routes>
    </Router>
