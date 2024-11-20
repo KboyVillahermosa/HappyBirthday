@@ -47,7 +47,7 @@ const Greetings: React.FC = () => {
               Kboy Villahermosa
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Happy Birthday love, I’m so proud of you always!
+            jayieeee, happiest birthday! just want to say how grateful i am for you. you’ve been like a sister to me, and we’ve been through so much together—church, school, life. even though we’re in different schools now and don’t hang out as much, you’ll always be one of my eternal best friends.
             </p>
             <div className="flex items-center justify-between mt-4">
               <button

@@ -17,7 +17,7 @@ const KboyMessage: React.FC = () => {
             I know we’re miles apart today, but my heart is with you,
             celebrating every beautiful moment of your special day. You’re the
             most amazing person I’ve ever known, and I wish I could give you the
-            world—everything you deserve and more.
+            world everything you deserve and more.
           </p>
 
           <p className="mb-5 text-gray-900">

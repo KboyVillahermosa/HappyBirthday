@@ -82,10 +82,10 @@ const Header: React.FC = () => {
         <audio ref={audioRef} src="/bday.mp3" loop />
         <div className="header">
           <div className="header-content">
-            <h1 className="mb-4 text-4xl font-extrabold uppercase leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-              <span className="text-[#FFE700]">Happy</span> <span className="text-[#00FF9C]">19th</span>{" "}
-              <span className="text-[#7E3AF2] dark:text-blue-500">Birthday</span>{" "}
-              <span className="text-pink-500">love</span>
+            <h1 className="mb-4 text-4xl font-extrabold  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+              <span className="text-[#FFE700] uppercase">Happy</span> <span className="text-[#00FF9C]">19<sup>th</sup></span>{" "}
+              <span className="text-[#7E3AF2] dark:text-blue-500 uppercase">Birthday</span>{" "}
+              <span className="text-pink-500 uppercase">love</span>
             </h1>
             <p className="text-gray-800">
               I wish more than anything that I could be there with you today, celebrating side by side. Even from miles away,
