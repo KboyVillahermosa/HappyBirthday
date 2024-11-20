@@ -90,7 +90,7 @@ const Header: React.FC = () => {
             <p className="text-gray-800">
               I wish more than anything that I could be there with you today, celebrating side by side. Even from miles away,
               you’re always right here with me. I hope your day is filled with all the love and happiness you deserve. Soon
-              enough, I’ll be right there by your side again. Until then, know that my heart is with you, today and always.
+              enough, I’ll be right there by your side. Until then, know that my heart is with you, today and always.
               Love you endlessly.
             </p>
           </div>
