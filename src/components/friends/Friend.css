@@ -2,7 +2,29 @@
     padding: 0;
     margin: 0;
 }
-
+.greetings-title{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.greetings-title-content{
+    width: 100%;
+    max-width: 200px;
+}
+.friend-mes{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px;
+}
+.friend-ms-content{
+    width: 100%;
+    max-width: 900px;
+}
 .friend-header{
     justify-content: center;
     display: flex;
