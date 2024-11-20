@@ -38,6 +38,7 @@ const Greetings: React.FC = () => {
 
   return (
     <>
+    <section id='greetings'>
       <div className="greatings-header flex flex-wrap gap-4 justify-center">
         {/* Displaying the first 4 cards */}
         <div className="greatings-content">
@@ -65,7 +66,7 @@ const Greetings: React.FC = () => {
         <div className="greatings-content">
           <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Mark Twain
+              Kboy Villahermosa
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               Hope you have the most wonderful birthday ever!
@@ -87,7 +88,7 @@ const Greetings: React.FC = () => {
         <div className="greatings-content">
           <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Sarah Williams
+              Kboy Villahermosa
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               Wishing you all the joy and happiness on your special day!
@@ -109,7 +110,7 @@ const Greetings: React.FC = () => {
         <div className="greatings-content">
           <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              John Doe
+              Kboy Villahermosa
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               May this year bring you countless blessings and endless joy!
@@ -133,7 +134,7 @@ const Greetings: React.FC = () => {
           <div className="greatings-content">
             <Card className="max-w-sm w-full" imgSrc="/kboy.jpg" horizontal>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                John Doe
+               Kboy Villahermosa
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
                 May this year bring you countless blessings and endless joy!
@@ -163,6 +164,7 @@ const Greetings: React.FC = () => {
           {showAll ? 'See Less' : 'See More'}
         </button>
       </div>
+      </section>
     </>
   );
 };

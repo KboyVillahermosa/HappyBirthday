@@ -5,6 +5,7 @@ import './Pictures.css'
 const Pictures:React.FC = () => {
   return (
     <>
+    <section id='pic'>
     <div className="fixed inset-0 -z-10 overflow-hidden">
     <svg
       aria-hidden="true"
@@ -32,7 +33,7 @@ const Pictures:React.FC = () => {
     </svg>
   </div>
     <div className="pic-title">
-        <h1 className='mb-4 text-4xl font-extrabold uppercase leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"'>You are so Pretty</h1>
+        <h1 className='mb-4 text-4xl font-extrabold uppercase leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"'><span className='text-[#FFE700]'>You </span> <span className='text-[#00FF9C]'>are</span> <span className='text-[#F5004F]'>so </span><span className='text-[#7E3AF2]'>Pretty</span></h1>
     </div>
     <div className="pic-header">
         
@@ -60,7 +61,29 @@ const Pictures:React.FC = () => {
         <div className="pic-content">
             <img src="/pretty8.jpg" alt="" />
         </div>
+        <div className="pic-content">
+            <img src="/new1.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new2.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new3.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new4.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new5.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new6.jpg" alt="" />
+        </div>
+        <div className="pic-content">
+            <img src="/new7.jpg" alt="" />
+        </div>
     </div>
+    </section>
     </>
   )
 }

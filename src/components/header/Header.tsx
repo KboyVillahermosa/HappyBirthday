@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 import "./Header.css";
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 const Header: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // Track if audio is playing
+  const [showModal, setShowModal] = useState(true); // Show the modal initially
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Toggle mute state
@@ -12,6 +14,21 @@ const Header: React.FC = () => {
     if (audioRef.current) {
       audioRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
+    }
+  };
+
+  // Play audio and handle potential autoplay issues
+  const handleAudioPlay = () => {
+    if (audioRef.current) {
+      audioRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+          setShowModal(false); // Close the modal after playing
+        })
+        .catch((error) => {
+          console.error("Error playing audio:", error);
+        });
     }
   };
 
@@ -24,20 +41,15 @@ const Header: React.FC = () => {
     });
   };
 
-  // Play audio once the component is mounted and also launch confetti
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        // Handle errors if audio play is blocked, for example, due to the browser's autoplay policy
-        console.error("Error playing audio:", error);
-      });
-    }
+    // Launch confetti every 3 seconds
     const interval = setInterval(launchConfetti, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
+    <section id="header">
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <svg
           aria-hidden="true"
@@ -61,24 +73,49 @@ const Header: React.FC = () => {
               strokeWidth={0}
             />
           </svg>
-          <rect fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" width="100%" height="100%" strokeWidth={0} />
+          <rect
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+          />
         </svg>
       </div>
-      <audio ref={audioRef} src="/happy-bday.mp3" loop />
+      <audio ref={audioRef} src="/bday.mp3" loop />
       <div className="header">
         <div className="header-content">
           <h1 className="mb-4 text-4xl font-extrabold uppercase leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Happy 19th <span className="text-[#7E3AF2] dark:text-blue-500">Birthday</span> love
+            <span className="text-[#FFE700]">Happy</span> <span className="text-[#00FF9C]">19th</span>{" "}
+            <span className="text-[#7E3AF2] dark:text-blue-500">Birthday</span>{" "}
+            <span className="text-pink-500">love</span>
           </h1>
           <p className="text-gray-800">
-            I wish more than anything that I could be there with you today, celebrating side by side. Even from miles away, you’re always right here with me. 
-            I hope your day is filled with all the love and happiness you deserve. Soon enough, I’ll be right there by your side again. Until then, know that my heart is with you, today and always. Love you endlessly.
+            I wish more than anything that I could be there with you today, celebrating side by side. Even from miles away,
+            you’re always right here with me. I hope your day is filled with all the love and happiness you deserve. Soon
+            enough, I’ll be right there by your side again. Until then, know that my heart is with you, today and always.
+            Love you endlessly.
           </p>
         </div>
       </div>
       <button onClick={toggleMute} className="mute-button">
         {isMuted ? <MdVolumeOff size={30} /> : <MdVolumeUp size={30} />}
       </button>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2 className="modal-title">Play the Background Music 🎵</h2>
+            <p className="modal-message">
+              Click the button below to play the background music and enjoy the full experience!
+            </p>
+            <button onClick={handleAudioPlay} className="play-audio-button">
+              Play Audio
+            </button>
+          </div>
+        </div>
+      )}
+      </section>
     </>
   );
 };
